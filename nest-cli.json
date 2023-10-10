@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/redis/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/redis/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/redis",
+  "projects": {
+    "redis": {
+      "type": "application",
+      "root": "apps/redis",
+      "entryFile": "main",
+      "sourceRoot": "apps/redis/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/redis/tsconfig.app.json"
+      }
+    },
+    "subscriber": {
+      "type": "application",
+      "root": "apps/subscriber",
+      "entryFile": "main",
+      "sourceRoot": "apps/subscriber/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/subscriber/tsconfig.app.json"
+      }
+    }
+  }
+}
