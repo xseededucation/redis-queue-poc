@@ -4,7 +4,7 @@ import { SubscriberService } from './subscriber.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BullModule } from '@nestjs/bull';
 import { TASKQUEUE } from 'apps/redis/src/constants';
-import { Consumer } from '../../redis/src/consumer';
+import { Consumer } from '../../redis/src/consumers/consumer';
 
 @Module({
   imports: [

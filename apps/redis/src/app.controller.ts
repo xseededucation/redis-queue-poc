@@ -5,13 +5,23 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get(':message')
+  @Get('/queue/:message')
   async enqueue(@Param('message') message:string): Promise<string> {
     return await this.appService.enqueue(message);
   }
 
-  @Post(':message')
+  @Post('/queue/:message')
   async getQueue(@Param('message') message:string){
     return await this.appService.getQueue();
+  }
+
+  @Get("/cache")
+  async getCache() {
+    return await this.appService.getCache();
+  }
+
+  @Post("/cache")
+  async setCache(){
+    return await this.appService.setCache();
   }
 }

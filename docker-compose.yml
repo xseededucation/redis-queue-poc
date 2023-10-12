@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+
+  redis:
+    image: redis
+    container_name: redis_poc
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
+    mem_limit: 6m
